@@ -23,7 +23,9 @@ function renderPosts(data) {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
   const postContainer = document.querySelector("#post-container");
-  const post = data.items.filter((post) => post.idreplace(/[./:]/g, "") === id);
+  const post = data.items.filter(
+    (post) => post.id.replace(/[./:]/g, "") === id
+  );
   let finalHtml = `<article class=" my-5   p-3 m-auto container" >
     <div class="card-body">
         <h5 class=" h3">

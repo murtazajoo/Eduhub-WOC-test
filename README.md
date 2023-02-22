@@ -17,13 +17,13 @@ Questions can be asked by raising an `Issue`.
 - Using git on your local machine. Do this to download the forked copy of this repository to your computer
 
 ```
-  git clone https://github.com/yourGithubUsername/Hacktoberfest_Practice_Contribution
+  git clone https://github.com/yourGithubUsername/Eduhub-WOC-test
 ```
 
 - switch to the cloned folder. This can be done with Gitbash or the integrated terminal in the VSCode editor
 
 ```
-  cd Hacktoberfest_Practice_Contribution
+  cd Eduhub-WOC-test
 ```
 
 - Make a new branch. Your name would make a good branch because it's unique!

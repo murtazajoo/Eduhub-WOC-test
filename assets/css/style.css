@@ -126,6 +126,9 @@ header {
 #initiatives .card img {
   height: 70px;
 }
+#initiatives .card {
+  height: 350px;
+}
 
 /* #team */
 

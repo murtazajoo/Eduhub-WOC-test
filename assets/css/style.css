@@ -71,7 +71,7 @@ header {
 /* EVENT */
 .event {
   max-width: 330px;
-  height: 300px;
+  height: 350px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -85,6 +85,9 @@ header {
   padding: 10px;
   background-color: #1443ff5c;
   margin: 10px;
+}
+.event img {
+  max-height: 200px;
 }
 .event-holder {
   display: -ms-grid;

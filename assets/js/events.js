@@ -47,14 +47,18 @@ function renderHomeEvents(data, all) {
               <div class="container-fluid">
                 <h5 class="py-2 title">${event.title}</h5>
                 <div class="row">
-                  <div class="col-6"><a href="./pages/events/event?id=${
-                    event.id
+                  <div class="col-6"><a href="${
+                    all
+                      ? "./event/?id=" + event.id
+                      : "./pages/events/event/?id=" + event.id
                   }">details</a></div>
                   <div class="col-6 text-end px-0">
                     <a href="${
                       event_ended
                         ? event["end-url"]
-                        : "./pages/events/event?id=" + event.id
+                        : all
+                        ? "./event/?id=" + event.id
+                        : "./pages/events/event/?id=" + event.id
                     }" class="btn ${
       event_ended ? "btn-dark" : "btn-primary "
     } round">${

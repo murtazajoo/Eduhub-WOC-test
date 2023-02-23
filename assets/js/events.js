@@ -29,7 +29,7 @@ function DateToMill(d) {
 }
 
 function renderHomeEvents(data, all) {
-  const events = data.reverse();
+  let events = data.reverse();
   if (!all) {
     events = events.slice(0, 5);
   }

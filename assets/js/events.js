@@ -67,7 +67,7 @@ function renderHomeEvents(data, all) {
     finalHTML += `   <div
               class="round d-flex justify-content-center align-items-center py-4 poppins"
             >
-              <a href=""> all events</a>
+              <a href="./pages/events"> all events</a>
             </div>`;
   }
 

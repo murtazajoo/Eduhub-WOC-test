@@ -47,7 +47,7 @@ function renderHomeEvents(data, all) {
               <div class="container-fluid">
                 <h5 class="py-2 title">${event.title}</h5>
                 <div class="row">
-                  <div class="col-6"><a href="./event/?id=${
+                  <div class="col-6"><a href="./event/index.html?id=${
                     event.id
                   }">details</a></div>
                   <div class="col-6 text-end px-0">

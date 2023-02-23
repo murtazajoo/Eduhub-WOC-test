@@ -1,4 +1,4 @@
-async function getEvents(f) {
+async function getEvents(f, all) {
   let headersList = {
     Accept: "*/*",
     "User-Agent": "Thunder Client (https://www.thunderclient.com)",
@@ -18,16 +18,26 @@ async function getEvents(f) {
 
   let data = await response.json();
   console.log(data);
-  f(data);
+  f(data, all);
 }
 
-getEvents(renderHomeEvents);
+function DateToMill(d) {
+  var date = new Date(d); // some mock date
+  var milliseconds = date.getTime();
+  console.log(milliseconds);
+  return milliseconds;
+}
 
-function renderHomeEvents(data) {
-  const events = data.reverse().slice(0, 4);
+function renderHomeEvents(data, all) {
+  const events = data.reverse();
+  if (!all) {
+    events = events.slice(0, 5);
+  }
   const eventsContainer = document.querySelector("#events-container");
   let finalHTML = "";
   events.map((event) => {
+    event_ended =
+      DateToMill(new Date().toLocaleString()) > DateToMill(event.date);
     finalHTML += `   <div data-aos="fade-up" class="event round shadow poppins">
               <img
                 src="${event.image}"
@@ -35,20 +45,31 @@ function renderHomeEvents(data) {
                 alt=""
               />
               <div class="container-fluid">
-                <h5 class="py-2">${event.title}</h5>
+                <h5 class="py-2 title">${event.title}</h5>
                 <div class="row">
-                  <div class="col-6"><a href="./event.html?id=${event.id}">details</a></div>
+                  <div class="col-6"><a href="./event/?id=${
+                    event.id
+                  }">details</a></div>
                   <div class="col-6 text-end px-0">
-                    <a href="./event.html?id=${event["end-url"]}" class="btn btn-primary round">Watch</a>
+                    <a href="${
+                      event_ended ? event["end-url"] : "./event/?id=" + event.id
+                    }" class="btn ${
+      event_ended ? "btn-dark" : "btn-primary "
+    } round">${
+      event_ended ? "<i class='fab fa-youtube'></i> Watch" : "Register"
+    }</a>
                   </div>
                 </div>
               </div>
             </div>`;
   });
-  finalHTML += `   <div
+  if (!all) {
+    finalHTML += `   <div
               class="round d-flex justify-content-center align-items-center py-4 poppins"
             >
               <a href=""> all events</a>
             </div>`;
+  }
+
   eventsContainer.innerHTML = finalHTML;
 }

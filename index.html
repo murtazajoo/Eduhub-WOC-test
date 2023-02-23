@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EDUHUB - HOME</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/events.css" />
+
     <link rel="stylesheet" href="./assets/css/nav.css" />
     <!-- Bootstrap -->
     <link
@@ -59,7 +61,7 @@
             <a class="nav-link" href="./pages/about/">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Events</a>
+            <a class="nav-link" href="./pages/events/">Events</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./pages/blog">Blog</a>
@@ -728,7 +730,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- Bootstrap -->
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/events.js"></script>
+    <script>
+      getEvents(renderHomeEvents, false);
+    </script>
     <script src="./assets/js/nav.script.js"></script>
   </body>
 </html>

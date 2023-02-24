@@ -1,7 +1,7 @@
 /* EVENT */
 .event {
   max-width: 330px;
-  height: 350px;
+  height: 360px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -18,7 +18,7 @@
 }
 .event img {
   max-height: 200px;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 .event .title {
   display: -webkit-box !important;

@@ -46,7 +46,7 @@ function renderHomeEvents(data, all) {
               />
               <div class="container-fluid">
                 <h5 class="py-2 title">${event.title}</h5>
-                <div class="row">
+                <div class="row pt-3">
                   <div class="col-6"><a href="${
                     all
                       ? "./event/?id=" + event.id
@@ -60,7 +60,7 @@ function renderHomeEvents(data, all) {
                         ? "./event/?id=" + event.id
                         : "./pages/events/event/?id=" + event.id
                     }" class="btn ${
-      event_ended ? "btn-dark" : "btn-primary "
+      event_ended ? "btn-danger" : "btn-primary "
     } round">${
       event_ended ? "<i class='fab fa-youtube'></i> Watch" : "Register"
     }</a>

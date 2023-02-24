@@ -39,7 +39,7 @@ function renderPosts(data) {
           </discription>
           </span>
           <br>
-          <a href="./post/?id=${post.id.replace(
+          <a href="../../pages/blog/post/?id=${post.id.replace(
             /[./:]/g,
             ""
           )}" class="btn btn-link">read more</a>

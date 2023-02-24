@@ -29,7 +29,11 @@ function renderEventDetails(data, all) {
               <div class="row py-2 g-4">
                 <div class="col-md-6 col-lg-6 col-12">
                   <span class="text-muted">Date|Time : </span> ${
-                    event_ended ? "Event has Ended" : date
+                    event_ended
+                      ? "Event has Ended"
+                      : new Date(
+                          date.replace("T", " ").replace("+", " +")
+                        ).toString()
                   }
                 </div>
                 <div class="col-md-6 col-lg-6 col-12">

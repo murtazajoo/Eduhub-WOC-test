@@ -22,9 +22,7 @@ async function getEvents(f, all) {
 }
 
 function DateToMill(d) {
-  var date = new Date(d); // some mock date
-  var milliseconds = date.getTime();
-  console.log(milliseconds);
+  var milliseconds = Date.parse(d.toString());
   return milliseconds;
 }
 
@@ -37,7 +35,7 @@ function renderHomeEvents(data, all) {
   let finalHTML = "";
   events.map((event) => {
     event_ended =
-      DateToMill(new Date().toLocaleString()) > DateToMill(event.date);
+      DateToMill(new Date()) > DateToMill(event.date.replace("T", " "));
     finalHTML += `   <div data-aos="fade-up" class="event round shadow poppins">
               <img
                 src="${event.image}"

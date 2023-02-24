@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin-Panel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="text-danger">
+        <a href="../" class="text-muted">Admin Panel</a> | Add Event
+      </h1>
+      <div class="container py-5">
+        <!--  
+              aria-describedby="titilehelp"
+            
+            <div id="titilehelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div> -->
+        <form class="border shadow border-info p-4 rounded">
+          <div class="mb-3">
+            <label for="event-title" class="form-label">Event-Title</label>
+            <input
+              type="text"
+              class="form-control border-info"
+              id="event-title"
+              name="title"
+              minlength="10"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="event-description" class="form-label"
+              >Event-Description</label
+            >
+            <textarea
+              class="form-control border-info"
+              id="event-description"
+              rows="3"
+              name="description"
+              minlength="20"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="event-date" class="form-label">Event-Date</label>
+            <input
+              type="datetime-local"
+              class="form-control border-info"
+              id="event-date"
+              name="date"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="event-image" class="form-label">Event-Image-Url</label>
+            <input
+              type="text"
+              class="form-control border-info"
+              id="event-image"
+              name="image"
+              aria-describedby="image-help"
+              required
+            />
+            <div id="image-help" class="form-text">
+              &#9432; paste the Url of your image, to get the url you need to
+              upload your image to a server/website like
+              <a target="_blank" href="https://imgur.com/">imgur</a> and copy
+              paste the url of the image you uploaded. Make sure to compress you
+              Image
+              <a target="_blank" href="https://www.iloveimg.com/">here</a>
+              before uploading it.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="event-link" class="form-label"
+              >Event-Registration-Url</label
+            >
+            <input
+              type="text"
+              class="form-control border-info"
+              id="event-link"
+              name="register-url"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="event-recording" class="form-label"
+              >Event-Recording-Url</label
+            >
+            <input
+              type="text"
+              class="form-control border-info"
+              id="event-recording"
+              name="end-url"
+              aria-describedby="recording-help"
+            />
+            <div id="recording-help" class="form-text">
+              &#9432; Leave this input blank if you do not have the Url/link
+              present this time. The url of your youtube channel will be added
+              instead
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="event-Location" class="form-label"
+              >Event-Location</label
+            >
+            <input
+              type="text"
+              class="form-control border-info"
+              id="event-Location"
+              name="location"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <p for="event-Type" class="form-label">Event-Type</p>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="type"
+                id="inperson"
+                value="in-person"
+              />
+              <label class="form-check-label" for="inperson">In-person</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="type"
+                id="virtual"
+                value="virtual"
+              />
+              <label class="form-check-label" for="virtual">Virtual</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="type"
+                id="hybrid"
+                value="Hybrid"
+                checked
+              />
+              <label class="form-check-label" for="hybrid">Hybrid</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div
+      id="loader-ele"
+      class="d-none justify-content-center align-items-center"
+      style="
+        position: fixed;
+        top: 0 !important ;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffff;
+      "
+    >
+      <div class="container-sm text-center">
+        <p class="text-center">adding event</p>
+        <div class="spinner-border text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <div
+      id="access"
+      class="d-flex justify-content-center align-items-center"
+      style="
+        position: fixed;
+        top: 0 !important ;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffff;
+      "
+    >
+      <div class="container-sm text-center">
+        <p class="text-center">Checking Access</p>
+        <div class="spinner-border text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../access.js"></script>
+    <script src="./addevent.js"></script>
+  </body>
+</html>

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EDUHUB -Blog-POSt</title>
-    <link rel="stylesheet" href="../../../assets/css/team.css" />
-    <link rel="stylesheet" href="../../../assets/css/nav.css" />
+    <title>EDUHUB - Contact</title>
+    <link rel="stylesheet" href="../../assets/css/team.css" />
+    <link rel="stylesheet" href="../../assets/css/nav.css" />
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -24,38 +24,12 @@
       crossorigin="anonymous"
     ></script>
     <!-- font-awesome   -->
-    <style>
-      article {
-        width: 100% !important;
-        overflow-x: hidden !important;
-      }
-      body {
-        width: 100vw !important;
-        overflow-x: hidden;
-      }
-      p a {
-        display: block !important;
-      }
-      .in-img-fluid img {
-        margin: 10px auto;
-        max-width: 100% !important;
-        height: auto;
-      }
-      @media (max-width: 430px) {
-        .card {
-          width: 98% !important;
-        }
-        .dis {
-          -webkit-line-clamp: 3;
-        }
-      }
-    </style>
   </head>
   <body>
     <nav class="poppins">
-      <a class="navbar-brand d-block" href="../../../"
+      <a class="navbar-brand d-block" href="../../"
         ><img
-          src="../../../assets/img/Eduhub Logo (2).png"
+          src="../../assets/img/Eduhub Logo (2).png"
           class="logo"
           alt="logo"
       /></a>
@@ -69,22 +43,22 @@
         ></i>
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../../../">Home</a>
+            <a class="nav-link" aria-current="page" href="../../">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../about/">About</a>
+            <a class="nav-link" href="../about/">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../events/">Events</a>
+            <a class="nav-link" href="../events/">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../blog/">Blog</a>
+            <a class="nav-link" href="../blog/">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../team/">Team</a>
+            <a class="nav-link" href="../team/">Team</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../contact/">Contact</a>
+            <a class="nav-link" href="../contact/">Contact</a>
           </li>
           <li class="nav-item">
             <a
@@ -110,21 +84,134 @@
         aria-label="breadcrumb"
       >
         <ol class="breadcrumb mt-4">
-          <li class="breadcrumb-item"><a href="../../../">Home</a></li>
-          <li class="breadcrumb-item"><a href="../../blog/">blog</a></li>
-          <li class="breadcrumb-item active" aria-current="page">post</li>
+          <li class="breadcrumb-item"><a href="../../">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Contact</li>
         </ol>
       </div>
     </div>
-    <main id="post-container">
-      <div
-        class="container text-center d-flex justify-content-center align-items-center"
-        style="min-height: 50vh"
-      >
-        <div class="spinner-border text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
+    <main class="container p-3">
+      <!--Section: Contact v.2-->
+      <section class="mb-4">
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">
+          Contact us
+        </h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">
+          Do you have any questions? Please do not hesitate to contact us
+          directly. Our team will come back to you within a matter of hours to
+          help you.
+        </p>
+
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-9 mb-md-0 mb-5" id="success-message">
+            <form>
+              <!--Grid row-->
+              <div class="row">
+                <!--Grid column-->
+                <div class="col-md-6">
+                  <div class="md-form mb-3">
+                    <label for="name" class="">Your name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-control p-3 border-info"
+                      required
+                    />
+                  </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                  <div class="md-form mb-3">
+                    <label for="email" class="">Your email</label>
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      class="form-control p-3 border-info"
+                      required
+                    />
+                  </div>
+                </div>
+                <!--Grid column-->
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="md-form mb-3">
+                    <label for="subject" class="">Subject</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      class="form-control p-3 border-info"
+                      required
+                      minlength="10"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+                <!--Grid column-->
+                <div class="col-md-12">
+                  <div class="md-form mb-3">
+                    <label for="message">Your message</label>
+                    <textarea
+                      type="text"
+                      id="message"
+                      name="message"
+                      rows="2"
+                      class="form-control p-3 border-info md-textarea"
+                      required
+                      minlength="50"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <!--Grid row-->
+              <div class="text-center text-md-left">
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                  Send
+                </button>
+              </div>
+            </form>
+
+            <div class="status"></div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-3 text-center">
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-map-marker-alt fa-2x"></i>
+                <p>San Francisco, CA 94126, USA</p>
+              </li>
+
+              <li>
+                <i class="fas fa-phone mt-4 fa-2x"></i>
+                <p>+ 01 234 567 89</p>
+              </li>
+
+              <li>
+                <i class="fas fa-envelope mt-4 fa-2x"></i>
+                <p>contact@mdbootstrap.com</p>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
         </div>
-      </div>
+      </section>
+      <!--Section: Contact v.2-->
     </main>
     <!-- Footer -->
     <!-- Footer -->
@@ -218,7 +305,7 @@
                 >
               </p>
               <p>
-                <a href="../../contact/" class="text-reset">contact</a>
+                <a href="../contact/" class="text-reset">contact</a>
               </p>
             </div>
             <!-- Grid column -->
@@ -233,13 +320,13 @@
                 <a href="./" class="text-reset">Home</a>
               </p>
               <p>
-                <a href="../../about/" class="text-reset">About</a>
+                <a href="../about/" class="text-reset">About</a>
               </p>
               <p>
-                <a href="../../blog/" class="text-reset">Blog</a>
+                <a href="../blog/" class="text-reset">Blog</a>
               </p>
               <p>
-                <a href="../../events/" class="text-reset">Events</a>
+                <a href="../events/" class="text-reset">Events</a>
               </p>
             </div>
             <!-- Grid column -->
@@ -291,7 +378,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Bootstrap -->
-    <script src="../../../assets/js/nav.script.js"></script>
-    <script src="./post.js"></script>
+    <script src="../../assets/js/nav.script.js"></script>
+    <script src="./contact.js"></script>
   </body>
 </html>

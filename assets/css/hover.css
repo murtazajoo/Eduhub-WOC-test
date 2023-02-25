@@ -1,0 +1,14 @@
+.btn:hover {
+  animation: jello !important; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s !important; /* don't forget to set a duration! */
+}
+
+a:hover {
+  animation: headShake !important; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s !important; /* don't forget to set a duration! */
+}
+
+.card:hover {
+  animation: jello !important; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 800ms !important; /* don't forget to set a duration! */
+}
